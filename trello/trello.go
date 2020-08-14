@@ -1,10 +1,14 @@
 package trello
 
-import "errors"
+import (
+	"errors"
+)
 
 type Trello struct {
 	key   string
 	token string
+
+	handler *HTTPHandler
 }
 
 func New(key, token string) (*Trello, error) {
@@ -13,7 +17,8 @@ func New(key, token string) (*Trello, error) {
 	}
 
 	return &Trello{
-		key:   key,
-		token: token,
+		key:     key,
+		token:   token,
+		handler: newHTTPHandler(key, token),
 	}, nil
 }

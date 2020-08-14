@@ -1,3 +1,7 @@
 auth:
     key: a123
     token: abc1
+
+template:
+    board_id: id1234
+    board_name: "Some Name"
